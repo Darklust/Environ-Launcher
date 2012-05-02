@@ -129,8 +129,8 @@ public class Main {
 		listener.initialize();
 
 		System.out.println("------------------------------------------");
-		System.out.println("Spoutcraft Launcher is starting....");
-		System.out.println("Spoutcraft Launcher Build: " + getBuild());
+		System.out.println("Environ Launcher is starting....");
+		System.out.println("Environ Launcher Build: " + getBuild());
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

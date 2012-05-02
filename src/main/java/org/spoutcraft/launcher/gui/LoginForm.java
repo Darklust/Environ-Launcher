@@ -161,7 +161,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginForm.class.getResource("/resources/favicon.png")));
 		setResizable(false);
 
-		setTitle("Spoutcraft Launcher");
+		setTitle("Environ Launcher");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
