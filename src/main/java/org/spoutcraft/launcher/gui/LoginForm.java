@@ -75,6 +75,7 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import org.iongaming.logikpack.MCPatcher;
 import org.jdesktop.swingworker.SwingWorker;
 
 import org.spoutcraft.launcher.*;
@@ -82,6 +83,7 @@ import org.spoutcraft.launcher.async.DownloadListener;
 import org.spoutcraft.launcher.exception.*;
 
 public class LoginForm extends JFrame implements ActionListener, DownloadListener, KeyListener, WindowListener {
+	private MCPatcher mcpatch;
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JPasswordField passwordField;
@@ -637,7 +639,6 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 					protected void done() {
 						if (mcUpdate) {
 							updateDialog.setToUpdate("Minecraft");
-						} else if (spoutUpdate) {
 							updateDialog.setToUpdate("Spoutcraft");
 						}
 						if (mcUpdate || spoutUpdate) {
@@ -736,6 +737,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 	}
 
 	public void runGame() {
+		mcpatch.patchMinecraft();
 		LauncherFrame launcher = new LauncherFrame();
 		launcher.setLoginForm(this);
 		int result = launcher.runGame(values[2].trim(), values[3].trim(), values[1].trim(), pass);
